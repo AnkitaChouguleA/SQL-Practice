@@ -1,12 +1,13 @@
-CREATE SCHEMA data_bank;
-SET search_path = data_bank;
+use Eight_weeks_challenge;
 
-CREATE TABLE regions (
+--CREATE SCHEMA data_bank;
+
+CREATE TABLE data_bank.regions (
   region_id INTEGER,
   region_name VARCHAR(9)
 );
 
-INSERT INTO regions
+INSERT INTO data_bank.regions
   (region_id, region_name)
 VALUES
   ('1', 'Australia'),
@@ -16,7 +17,7 @@ VALUES
   ('5', 'Europe');
 
 
-CREATE TABLE customer_nodes (
+CREATE TABLE data_bank.customer_nodes (
   customer_id INTEGER,
   region_id INTEGER,
   node_id INTEGER,
@@ -24,7 +25,7 @@ CREATE TABLE customer_nodes (
   end_date DATE
 );
 
-INSERT INTO customer_nodes
+INSERT INTO data_bank.customer_nodes
   (customer_id, region_id, node_id, start_date, end_date)
 VALUES
   ('1', '3', '4', '2020-01-02', '2020-01-03'),
@@ -526,7 +527,12 @@ VALUES
   ('497', '5', '1', '2020-01-30', '2020-02-27'),
   ('498', '1', '4', '2020-01-19', '2020-01-24'),
   ('499', '5', '5', '2020-01-02', '2020-01-04'),
-  ('500', '2', '2', '2020-01-16', '2020-01-31'),
+  ('500', '2', '2', '2020-01-16', '2020-01-31')
+
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '4', '2020-01-04', '2020-01-14'),
   ('2', '3', '3', '2020-01-18', '2020-02-09'),
   ('3', '5', '5', '2020-02-19', '2020-03-06'),
@@ -1026,7 +1032,12 @@ VALUES
   ('497', '5', '5', '2020-02-28', '2020-03-17'),
   ('498', '1', '4', '2020-01-25', '2020-02-07'),
   ('499', '5', '4', '2020-01-05', '2020-01-15'),
-  ('500', '2', '1', '2020-02-01', '2020-02-06'),
+  ('500', '2', '1', '2020-02-01', '2020-02-06')
+
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '2', '2020-01-15', '2020-01-16'),
   ('2', '3', '3', '2020-02-10', '2020-02-21'),
   ('3', '5', '3', '2020-03-07', '2020-03-24'),
@@ -1526,7 +1537,11 @@ VALUES
   ('497', '5', '5', '2020-03-18', '2020-04-09'),
   ('498', '1', '1', '2020-02-08', '2020-03-04'),
   ('499', '5', '2', '2020-01-16', '2020-01-23'),
-  ('500', '2', '3', '2020-02-07', '2020-02-26'),
+  ('500', '2', '3', '2020-02-07', '2020-02-26')
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '5', '2020-01-17', '2020-01-28'),
   ('2', '3', '5', '2020-02-22', '2020-03-07'),
   ('3', '5', '4', '2020-03-25', '2020-04-08'),
@@ -2026,7 +2041,11 @@ VALUES
   ('497', '5', '5', '2020-04-10', '2020-04-14'),
   ('498', '1', '4', '2020-03-05', '2020-03-10'),
   ('499', '5', '1', '2020-01-24', '2020-01-25'),
-  ('500', '2', '2', '2020-02-27', '2020-03-12'),
+  ('500', '2', '2', '2020-02-27', '2020-03-12')
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '3', '2020-01-29', '2020-02-18'),
   ('2', '3', '2', '2020-03-08', '2020-03-12'),
   ('3', '5', '1', '2020-04-09', '2020-04-09'),
@@ -2526,7 +2545,11 @@ VALUES
   ('497', '5', '5', '2020-04-15', '2020-04-30'),
   ('498', '1', '2', '2020-03-11', '2020-03-17'),
   ('499', '5', '4', '2020-01-26', '2020-01-29'),
-  ('500', '2', '5', '2020-03-13', '2020-03-18'),
+  ('500', '2', '5', '2020-03-13', '2020-03-18')
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '2', '2020-02-19', '2020-03-16'),
   ('2', '3', '4', '2020-03-13', '2020-03-13'),
   ('3', '5', '4', '2020-04-10', '2020-04-24'),
@@ -3026,7 +3049,11 @@ VALUES
   ('497', '5', '2', '2020-05-01', '2020-05-26'),
   ('498', '1', '2', '2020-03-18', '2020-04-04'),
   ('499', '5', '5', '2020-01-30', '2020-02-02'),
-  ('500', '2', '2', '2020-03-19', '2020-04-14'),
+  ('500', '2', '2', '2020-03-19', '2020-04-14')
+
+INSERT INTO data_bank.customer_nodes
+  (customer_id, region_id, node_id, start_date, end_date)
+VALUES
   ('1', '3', '2', '2020-03-17', '9999-12-31'),
   ('2', '3', '4', '2020-03-14', '9999-12-31'),
   ('3', '5', '2', '2020-04-25', '9999-12-31'),
@@ -3528,14 +3555,14 @@ VALUES
   ('499', '5', '1', '2020-02-03', '9999-12-31'),
   ('500', '2', '2', '2020-04-15', '9999-12-31');
 
-CREATE TABLE customer_transactions (
+CREATE TABLE data_bank.customer_transactions (
   customer_id INTEGER,
   txn_date DATE,
   txn_type VARCHAR(10),
   txn_amount INTEGER
 );
 
-INSERT INTO customer_transactions
+INSERT INTO data_bank.customer_transactions
   (customer_id, txn_date, txn_type, txn_amount)
 VALUES
   ('429', '2020-01-21', 'deposit', '82'),
@@ -3969,7 +3996,11 @@ VALUES
   ('132', '2020-01-10', 'deposit', '14'),
   ('213', '2020-01-17', 'deposit', '421'),
   ('79', '2020-01-29', 'deposit', '521'),
-  ('306', '2020-01-27', 'deposit', '402'),
+  ('306', '2020-01-27', 'deposit', '402')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('8', '2020-01-15', 'deposit', '207'),
   ('294', '2020-01-12', 'deposit', '307'),
   ('485', '2020-01-03', 'deposit', '524'),
@@ -4465,7 +4496,11 @@ VALUES
   ('296', '2020-03-11', 'deposit', '317'),
   ('296', '2020-03-16', 'withdrawal', '160'),
   ('296', '2020-01-27', 'withdrawal', '655'),
-  ('296', '2020-02-17', 'withdrawal', '774'),
+  ('296', '2020-02-17', 'withdrawal', '774')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('296', '2020-02-29', 'deposit', '341'),
   ('296', '2020-02-01', 'deposit', '983'),
   ('296', '2020-02-22', 'deposit', '733'),
@@ -4961,7 +4996,11 @@ VALUES
   ('406', '2020-03-02', 'deposit', '177'),
   ('406', '2020-03-24', 'deposit', '394'),
   ('406', '2020-03-09', 'deposit', '385'),
-  ('406', '2020-03-12', 'withdrawal', '114'),
+  ('406', '2020-03-12', 'withdrawal', '114')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('406', '2020-04-10', 'withdrawal', '342'),
   ('406', '2020-02-12', 'withdrawal', '424'),
   ('406', '2020-04-03', 'withdrawal', '262'),
@@ -5457,7 +5496,11 @@ VALUES
   ('416', '2020-02-03', 'withdrawal', '990'),
   ('416', '2020-03-11', 'deposit', '407'),
   ('416', '2020-03-10', 'deposit', '904'),
-  ('416', '2020-03-14', 'deposit', '791'),
+  ('416', '2020-03-14', 'deposit', '791')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('416', '2020-03-23', 'deposit', '660'),
   ('416', '2020-02-17', 'deposit', '990'),
   ('416', '2020-02-10', 'deposit', '699'),
@@ -5953,7 +5996,11 @@ VALUES
   ('223', '2020-01-27', 'purchase', '268'),
   ('223', '2020-01-23', 'withdrawal', '948'),
   ('223', '2020-04-09', 'withdrawal', '332'),
-  ('223', '2020-03-01', 'purchase', '364'),
+  ('223', '2020-03-01', 'purchase', '364')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('223', '2020-02-02', 'purchase', '956'),
   ('223', '2020-04-06', 'deposit', '490'),
   ('223', '2020-03-05', 'withdrawal', '822'),
@@ -6449,7 +6496,11 @@ VALUES
   ('110', '2020-03-03', 'deposit', '417'),
   ('110', '2020-01-18', 'deposit', '480'),
   ('110', '2020-02-06', 'deposit', '914'),
-  ('110', '2020-01-19', 'purchase', '85'),
+  ('110', '2020-01-19', 'purchase', '85')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('110', '2020-01-06', 'withdrawal', '697'),
   ('110', '2020-01-21', 'deposit', '705'),
   ('110', '2020-01-18', 'deposit', '709'),
@@ -6945,7 +6996,11 @@ VALUES
   ('468', '2020-03-02', 'deposit', '40'),
   ('468', '2020-03-18', 'purchase', '776'),
   ('468', '2020-02-14', 'purchase', '902'),
-  ('468', '2020-02-19', 'deposit', '708'),
+  ('468', '2020-02-19', 'deposit', '708')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('468', '2020-01-29', 'purchase', '900'),
   ('468', '2020-03-02', 'withdrawal', '26'),
   ('439', '2020-03-04', 'withdrawal', '916'),
@@ -7441,7 +7496,11 @@ VALUES
   ('113', '2020-02-21', 'deposit', '753'),
   ('113', '2020-04-09', 'purchase', '686'),
   ('113', '2020-03-10', 'withdrawal', '544'),
-  ('113', '2020-03-23', 'deposit', '203'),
+  ('113', '2020-03-23', 'deposit', '203')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('94', '2020-03-23', 'deposit', '690'),
   ('94', '2020-01-25', 'withdrawal', '449'),
   ('94', '2020-02-02', 'withdrawal', '738'),
@@ -7937,7 +7996,11 @@ VALUES
   ('24', '2020-02-09', 'withdrawal', '149'),
   ('24', '2020-02-12', 'purchase', '218'),
   ('24', '2020-02-07', 'withdrawal', '505'),
-  ('24', '2020-03-06', 'purchase', '289'),
+  ('24', '2020-03-06', 'purchase', '289')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('24', '2020-02-29', 'deposit', '355'),
   ('15', '2020-04-02', 'deposit', '723'),
   ('486', '2020-01-21', 'withdrawal', '308'),
@@ -8445,7 +8508,11 @@ VALUES
   ('370', '2020-01-20', 'withdrawal', '903'),
   ('370', '2020-02-08', 'purchase', '928'),
   ('370', '2020-02-18', 'deposit', '393'),
-  ('370', '2020-03-13', 'deposit', '175'),
+  ('370', '2020-03-13', 'deposit', '175')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('88', '2020-04-08', 'withdrawal', '84'),
   ('88', '2020-02-17', 'deposit', '732'),
   ('88', '2020-03-27', 'purchase', '580'),
@@ -8929,7 +8996,11 @@ VALUES
   ('262', '2020-02-17', 'purchase', '16'),
   ('262', '2020-01-04', 'withdrawal', '728'),
   ('341', '2020-03-19', 'withdrawal', '958'),
-  ('341', '2020-04-18', 'withdrawal', '168'),
+  ('341', '2020-04-18', 'withdrawal', '168')
+
+INSERT INTO data_bank.customer_transactions
+  (customer_id, txn_date, txn_type, txn_amount)
+VALUES
   ('341', '2020-03-10', 'withdrawal', '310'),
   ('341', '2020-03-30', 'deposit', '8'),
   ('341', '2020-02-26', 'withdrawal', '576'),
